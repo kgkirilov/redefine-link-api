@@ -117,7 +117,7 @@ public class Url {
         this.userByIdUser = userByIdUser;
     }
 
-    @OneToMany(mappedBy = "urlByIdUrl")
+    @OneToMany(mappedBy = "urlByIdUrl", cascade = CascadeType.REMOVE)
     @JsonIgnore
     public Collection<Visit> getVisitsByIdUrl() {
         return visitsByIdUrl;

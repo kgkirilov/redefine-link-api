@@ -132,7 +132,7 @@ public class User {
         return result;
     }
 
-    @OneToMany(mappedBy = "userByIdUser")
+    @OneToMany(mappedBy = "userByIdUser", cascade = CascadeType.REMOVE)
     @JsonIgnore
     public Collection<Domain> getDomainsByIdUser() {
         return domainsByIdUser;
@@ -142,7 +142,7 @@ public class User {
         this.domainsByIdUser = domainsByIdUser;
     }
 
-    @OneToMany(mappedBy = "userByIdUser")
+    @OneToMany(mappedBy = "userByIdUser", cascade = CascadeType.REMOVE)
     @JsonIgnore
     public Collection<Url> getUrlsByIdUser() {
         return urlsByIdUser;
